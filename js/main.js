@@ -286,6 +286,18 @@
 		})
 	};
 
+	var windowScroll = function() {
+		var back = document.getElementByClassName('back-to-top');
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+				back.style.bottom = "1%";
+			}
+			else {
+				back.style.bottom = "-50%";
+			}
+	};
+
+	
+
 	// Document on load.
 	$(function(){
 		fullHeight();
@@ -304,7 +316,30 @@
 		sliderMain();
 		stickyFunction();
 		owlCrouselFeatureSlide();
+
+
+		
+		$(".count").click(function(){
+			var count = parseInt($("~ .countH", this).text());
+			var count = count + 1;
+			$("~ .countH", this).text(count);
+		});
+
 	});
 
+	//
 
 }());
+
+
+function submit(){
+	var name = getElementsById('name');
+	var email = getElementsById('email');
+	var title = getElementsById('title');
+	var message = getElementsById('message');
+
+	if (name.value == "") {
+		alert("Ahihi");
+	}
+
+}
